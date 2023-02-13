@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:swiftcoin/Auth/into_auth.dart';
+import 'package:swiftcoin/Auth/phone_auth.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/intro',
-      routes: {'/intro': (context) => IntoAuth()},
+      initialRoute: '/phone',
+      routes: {
+        '/intro': (context) => IntoAuth(),
+        '/phone': (context) => PhoneAuth()
+      },
     );
   }
 }

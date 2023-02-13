@@ -22,7 +22,7 @@ class _IntoAuthState extends State<IntoAuth> {
                 child: Text('SwiftCoin',
                     style: TextStyle(
                         fontSize: 45,
-                        color: Color.fromARGB(255, 60, 191, 193))),
+                        color: Color.fromARGB(255, 60, 173, 193))),
               )
             ],
           ),
@@ -52,12 +52,12 @@ class _IntoAuthState extends State<IntoAuth> {
                   ),
                 ),
                 style: TextButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 60, 191, 193)),
+                    backgroundColor: Color.fromARGB(255, 60, 173, 193)),
               )
             ],
           ),
           SizedBox(height: 174.2),
-          FittedBox(child: Image.asset("assets/curve.png"), fit: BoxFit.cover)
+          Image.asset("assets/curve.png")
         ],
       )),
     );
