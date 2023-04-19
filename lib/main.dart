@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:swiftcoin/Pages/Auth/Intro.dart';
 import 'package:swiftcoin/Pages/Auth/phone_auth.dart';
+import 'package:swiftcoin/Pages/Auth/Validation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         '/intro': (context) => Intro(),
         '/phone': (context) => PhoneAuth(),
       },
-      home: PhoneAuth(),
+      home: Validation(),
     );
   }
 }

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:swiftcoin/Shared/consant.dart';
 
 class PhoneAuth extends StatefulWidget {
@@ -21,7 +19,7 @@ class _PhoneAuthState extends State<PhoneAuth> {
         appBar: AppBar(
           title: Text('SwiftCoin',
               style: TextStyle(
-                  fontSize: 20, color: Color.fromARGB(255, 60, 173, 193))),
+                  fontSize: 30, color: Color.fromARGB(255, 60, 173, 193))),
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
