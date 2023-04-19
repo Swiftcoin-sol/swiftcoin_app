@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:swiftcoin/Shared/consant.dart';
 
 class PhoneAuth extends StatefulWidget {
   const PhoneAuth({Key? key}) : super(key: key);
@@ -10,65 +11,85 @@ class PhoneAuth extends StatefulWidget {
 }
 
 class _PhoneAuthState extends State<PhoneAuth> {
+  TextEditingController _phoneAuth = TextEditingController(text: "+237");
+
   @override
   Widget build(BuildContext context) {
+    final widthMedia = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      body: SafeArea(
-          child: Column(
-        children: [
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.all(22),
-                child: Text('SwiftCoin',
-                    style: TextStyle(
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 60, 173, 193))),
-              ),
-            ],
-          ),
-          SizedBox(height: 90),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
+        appBar: AppBar(
+          title: Text('SwiftCoin',
+              style: TextStyle(
+                  fontSize: 20, color: Color.fromARGB(255, 60, 173, 193))),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        body: Stack(
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 60, 0, 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Enter Your Phone Number',
-                      style: TextStyle(fontSize: 24, color: Colors.grey)),
-                  SizedBox(height: 13),
-                  Text('a validation code will be send',
-                      style: TextStyle(fontSize: 18, color: Colors.grey)),
-                  Text('to this number',
-                      style: TextStyle(fontSize: 18, color: Colors.grey)),
-                ],
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(8),
-                height: 80,
-                child: IntlPhoneField(
-                  decoration: const InputDecoration(
-                    counter: Offstage(),
-                    labelText: 'Mobile Number',
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
+                  Column(
+                    children: [
+                      Text('Enter Your Phone Number',
+                          style: TextStyle(fontSize: 24, color: Colors.grey)),
+                      SizedBox(height: 13),
+                      Text('a validation code will be send',
+                          style: TextStyle(fontSize: 18, color: Colors.grey)),
+                      Text('to this number',
+                          style: TextStyle(fontSize: 18, color: Colors.grey)),
+                      SizedBox(height: 13),
+                      Form(
+                          child: Row(
+                        children: [
+                          SizedBox(
+                            width: 70,
+                            child: TextFormField(
+                              style: TextStyle(color: Colors.grey),
+                              readOnly: true,
+                              decoration: textInputForm,
+                              controller: _phoneAuth,
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          SizedBox(
+                            width: 160,
+                            child: TextFormField(decoration: textInputForm),
+                          )
+                        ],
+                      )),
+                      SizedBox(height: 50),
+                      SizedBox(
+                        height: 45,
+                        width: 160,
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text("Next",
+                              style: TextStyle(color: Colors.white)),
+                          style: TextButton.styleFrom(
+                              backgroundColor:
+                                  Color.fromARGB(255, 60, 173, 193)),
+                        ),
+                      ),
+                    ],
                   ),
-                  initialCountryCode: 'IN',
-                  showDropdownIcon: true,
-                  dropdownIconPosition: IconPosition.trailing,
-                  onChanged: (phone) {
-                    print(phone.completeNumber);
-                  },
-                ),
-              )
-            ],
-          ),
-        ],
-      )),
-    );
+                ],
+              ),
+            ),
+            Positioned(
+              top: 400,
+              width: widthMedia,
+              // height: 200,
+              child: Image(
+                image: AssetImage("assets/curve.png"),
+                fit: BoxFit.cover,
+              ),
+            )
+          ],
+        ));
   }
 }

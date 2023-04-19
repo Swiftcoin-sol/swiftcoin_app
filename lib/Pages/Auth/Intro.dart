@@ -59,7 +59,7 @@ class Intro extends StatelessWidget {
             // height: 200,
             child: Image(
               image: AssetImage("assets/curve.png"),
-              fit: BoxFit.fitWidth,
+              fit: BoxFit.contain,
             ),
           )
         ],

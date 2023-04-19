@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/intro': (context) => Intro(),
-        '/phone': (context) => PhoneAuth()
+        '/phone': (context) => PhoneAuth(),
       },
-      home: Intro(),
+      home: PhoneAuth(),
     );
   }
 }
