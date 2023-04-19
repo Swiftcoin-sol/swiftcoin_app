@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:swiftcoin/Shared/consant.dart';
 
 class Validation extends StatefulWidget {
   const Validation({Key? key}) : super(key: key);
@@ -16,6 +15,9 @@ class _ValidationState extends State<Validation> {
 
     return Scaffold(
         appBar: AppBar(
+          leading: BackButton(
+            color: Color.fromARGB(255, 60, 173, 193),
+          ),
           title: Text('SwiftCoin',
               style: TextStyle(
                   fontSize: 30, color: Color.fromARGB(255, 60, 173, 193))),
@@ -36,6 +38,8 @@ class _ValidationState extends State<Validation> {
                           style: TextStyle(fontSize: 18, color: Colors.grey)),
                       Text('number',
                           style: TextStyle(fontSize: 18, color: Colors.grey)),
+                      Text('(The validation will be send to your phone number)',
+                          style: TextStyle(fontSize: 16, color: Colors.grey)),
                       SizedBox(height: 25),
                       Form(
                           child: Row(
@@ -176,7 +180,9 @@ class _ValidationState extends State<Validation> {
                         height: 45,
                         width: 160,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/codeSet');
+                          },
                           child: Text("Next",
                               style: TextStyle(color: Colors.white)),
                           style: TextButton.styleFrom(

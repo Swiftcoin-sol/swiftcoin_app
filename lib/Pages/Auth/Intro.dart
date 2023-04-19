@@ -42,7 +42,9 @@ class Intro extends StatelessWidget {
                       height: 45,
                       width: 160,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/phone');
+                        },
                         child: Text("Let's get started",
                             style: TextStyle(color: Colors.white)),
                         style: TextButton.styleFrom(

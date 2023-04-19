@@ -17,6 +17,9 @@ class _PhoneAuthState extends State<PhoneAuth> {
 
     return Scaffold(
         appBar: AppBar(
+          leading: BackButton(
+            color: Color.fromARGB(255, 60, 173, 193),
+          ),
           title: Text('SwiftCoin',
               style: TextStyle(
                   fontSize: 30, color: Color.fromARGB(255, 60, 173, 193))),
@@ -65,7 +68,9 @@ class _PhoneAuthState extends State<PhoneAuth> {
                         height: 45,
                         width: 160,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/validation');
+                          },
                           child: Text("Next",
                               style: TextStyle(color: Colors.white)),
                           style: TextButton.styleFrom(
