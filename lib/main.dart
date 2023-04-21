@@ -3,6 +3,7 @@ import 'package:swiftcoin/Pages/Auth/Intro.dart';
 import 'package:swiftcoin/Pages/Auth/phone_auth.dart';
 import 'package:swiftcoin/Pages/Auth/Validation.dart';
 import 'package:swiftcoin/Pages/Auth/codeSet.dart';
+import 'package:swiftcoin/Pages/Dashboard/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         '/validation': (context) => Validation(),
         '/codeSet': (context) => CodeSet()
       },
-      home: Intro(),
+      home: Home(),
     );
   }
 }
