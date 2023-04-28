@@ -71,7 +71,9 @@ class _CodeSetState extends State<CodeSet> {
                         height: 45,
                         width: 160,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/home');
+                          },
                           child: Text("Set Code",
                               style: TextStyle(color: Colors.white)),
                           style: TextButton.styleFrom(

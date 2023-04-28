@@ -21,9 +21,10 @@ class MyApp extends StatelessWidget {
         '/intro': (context) => Intro(),
         '/phone': (context) => PhoneAuth(),
         '/validation': (context) => Validation(),
-        '/codeSet': (context) => CodeSet()
+        '/codeSet': (context) => CodeSet(),
+        '/home': (context) => Home()
       },
-      home: Home(),
+      home: Intro(),
     );
   }
 }

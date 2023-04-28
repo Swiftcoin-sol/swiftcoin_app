@@ -13,11 +13,21 @@ class Intro extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 150, 0, 9),
-                child: Text('SwiftCoin',
-                    style: TextStyle(
-                        fontSize: 45,
-                        color: Color.fromARGB(255, 60, 173, 193))),
+                padding: const EdgeInsets.fromLTRB(0, 50, 0, 9),
+                child: Column(
+                  children: [
+                    Image(
+                      image: AssetImage("assets/logo.png"),
+                      width: 120,
+                      height: 120,
+                    ),
+                    SizedBox(height: 30),
+                    Text('SwiftCoin',
+                        style: TextStyle(
+                            fontSize: 45,
+                            color: Color.fromARGB(255, 60, 173, 193))),
+                  ],
+                ),
               )
             ],
           ),
@@ -27,7 +37,7 @@ class Intro extends StatelessWidget {
               Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 50),
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: Column(
                       children: [
                         Text('Make secure transactions',
@@ -37,7 +47,7 @@ class Intro extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 85),
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 65),
                     child: SizedBox(
                       height: 45,
                       width: 160,

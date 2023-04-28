@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:round_icon/round_icon.dart';
+import 'package:swiftcoin/Shared/popUp.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -227,7 +229,9 @@ class _HomeState extends State<Home> {
                             child: Column(
                               children: [
                                 MaterialButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    retriveMoney(context);
+                                  },
                                   color: Color.fromARGB(255, 174, 253, 237),
                                   elevation: 0,
                                   child: Column(
