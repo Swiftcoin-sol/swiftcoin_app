@@ -53,18 +53,18 @@ class _PhoneAuthState extends State<PhoneAuth> {
                   Column(
                     children: [
                       Text('Enter Your Phone Number',
-                          style: TextStyle(fontSize: 24, color: black)),
-                      SizedBox(height: 13),
+                          style: TextStyle(fontSize: 20.sp, color: black)),
+                      SizedBox(height: 1.h),
                       Text('a validation code will be send',
-                          style: TextStyle(fontSize: 18, color: black)),
+                          style: TextStyle(fontSize: 18, color: blackDesc)),
                       Text('to this number',
-                          style: TextStyle(fontSize: 18, color: black)),
-                      SizedBox(height: 13),
+                          style: TextStyle(fontSize: 18, color: blackDesc)),
+                      SizedBox(height: 1.h),
                       Form(
                           child: Row(
                         children: [
                           SizedBox(
-                            width: 70,
+                            width: 19.w,
                             child: TextFormField(
                               style: TextStyle(color: Colors.grey),
                               readOnly: true,
@@ -72,17 +72,17 @@ class _PhoneAuthState extends State<PhoneAuth> {
                               controller: _phoneAuth,
                             ),
                           ),
-                          SizedBox(width: 10),
+                          SizedBox(width: 3.w),
                           SizedBox(
                             width: 160,
                             child: TextFormField(decoration: textInputForm),
                           )
                         ],
                       )),
-                      SizedBox(height: 60),
+                      SizedBox(height: 6.h),
                       SizedBox(
-                        height: 45,
-                        width: 160,
+                        height: 6.h,
+                        width: 50.w,
                         child: TextButton(
                           onPressed: () {
                             Navigator.pushNamed(context, '/validation');

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:swiftcoin/Shared/include.dart';
 
 class Validation extends StatefulWidget {
   const Validation({Key? key}) : super(key: key);
@@ -23,6 +24,21 @@ class _ValidationState extends State<Validation> {
                   fontSize: 30, color: Color.fromARGB(255, 60, 173, 193))),
           backgroundColor: Colors.transparent,
           elevation: 0,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton.icon(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.language,
+                    color: green,
+                  ),
+                  label: Text(
+                    "Fr",
+                    style: TextStyle(color: green),
+                  )),
+            )
+          ],
         ),
         body: Stack(
           // crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -35,11 +51,11 @@ class _ValidationState extends State<Validation> {
                   Column(
                     children: [
                       Text('Enter the validation code',
-                          style: TextStyle(fontSize: 18, color: Colors.grey)),
+                          style: TextStyle(fontSize: 18, color: black)),
                       Text('number',
-                          style: TextStyle(fontSize: 18, color: Colors.grey)),
+                          style: TextStyle(fontSize: 18, color: black)),
                       Text('(The validation will be send to your phone number)',
-                          style: TextStyle(fontSize: 16, color: Colors.grey)),
+                          style: TextStyle(fontSize: 16, color: black)),
                       SizedBox(height: 25),
                       Form(
                           child: Row(
