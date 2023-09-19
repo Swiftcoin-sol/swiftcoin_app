@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:swiftcoin/Shared/consant.dart';
+import 'package:swiftcoin/Shared/include.dart';
 
 class PhoneAuth extends StatefulWidget {
   const PhoneAuth({Key? key}) : super(key: key);
@@ -25,6 +26,21 @@ class _PhoneAuthState extends State<PhoneAuth> {
                   fontSize: 30, color: Color.fromARGB(255, 60, 173, 193))),
           backgroundColor: Colors.transparent,
           elevation: 0,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton.icon(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.language,
+                    color: green,
+                  ),
+                  label: Text(
+                    "Fr",
+                    style: TextStyle(color: green),
+                  )),
+            )
+          ],
         ),
         body: Stack(
           // crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -37,12 +53,12 @@ class _PhoneAuthState extends State<PhoneAuth> {
                   Column(
                     children: [
                       Text('Enter Your Phone Number',
-                          style: TextStyle(fontSize: 24, color: Colors.grey)),
+                          style: TextStyle(fontSize: 24, color: black)),
                       SizedBox(height: 13),
                       Text('a validation code will be send',
-                          style: TextStyle(fontSize: 18, color: Colors.grey)),
+                          style: TextStyle(fontSize: 18, color: black)),
                       Text('to this number',
-                          style: TextStyle(fontSize: 18, color: Colors.grey)),
+                          style: TextStyle(fontSize: 18, color: black)),
                       SizedBox(height: 13),
                       Form(
                           child: Row(
@@ -63,7 +79,7 @@ class _PhoneAuthState extends State<PhoneAuth> {
                           )
                         ],
                       )),
-                      SizedBox(height: 50),
+                      SizedBox(height: 60),
                       SizedBox(
                         height: 45,
                         width: 160,
@@ -84,7 +100,7 @@ class _PhoneAuthState extends State<PhoneAuth> {
               ),
             ),
             Positioned(
-              top: 400,
+              top: 60.2.h,
               width: widthMedia,
               // height: 200,
               child: Image(
