@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:swiftcoin/Pages/Auth/Intro.dart';
 import 'package:swiftcoin/Pages/Auth/phone_auth.dart';
 import 'package:swiftcoin/Pages/Auth/Validation.dart';
@@ -15,16 +16,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        '/intro': (context) => Intro(),
-        '/phone': (context) => PhoneAuth(),
-        '/validation': (context) => Validation(),
-        '/codeSet': (context) => CodeSet(),
-        '/home': (context) => Home()
-      },
-      home: Intro(),
-    );
+    return ResponsiveSizer(builder: (context, Orientation, DeviceType) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          '/intro': (context) => Intro(),
+          '/phone': (context) => PhoneAuth(),
+          '/validation': (context) => Validation(),
+          '/codeSet': (context) => CodeSet(),
+          '/home': (context) => Home()
+        },
+        home: Intro(),
+      );
+    });
   }
 }

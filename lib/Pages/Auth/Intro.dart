@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:swiftcoin/Shared/include.dart';
 
 class Intro extends StatelessWidget {
   const Intro({Key? key}) : super(key: key);
@@ -6,6 +8,25 @@ class Intro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextButton.icon(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.language,
+                  color: green,
+                ),
+                label: Text(
+                  "Fr",
+                  style: TextStyle(color: green),
+                )),
+          )
+        ],
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -13,18 +34,19 @@ class Intro extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 50, 0, 9),
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 9),
                 child: Column(
                   children: [
+                    SizedBox(height: 4.h),
                     Image(
                       image: AssetImage("assets/logo.png"),
                       width: 120,
                       height: 120,
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 10.55.h),
                     Text('SwiftCoin',
                         style: TextStyle(
-                            fontSize: 45,
+                            fontSize: 28.50.sp,
                             color: Color.fromARGB(255, 60, 173, 193))),
                   ],
                 ),
@@ -41,8 +63,9 @@ class Intro extends StatelessWidget {
                     child: Column(
                       children: [
                         Text('Make secure transactions',
-                            style: TextStyle(fontSize: 18)),
-                        Text('in no time', style: TextStyle(fontSize: 18)),
+                            style: TextStyle(fontSize: 18.sp, color: black)),
+                        Text('in no time',
+                            style: TextStyle(fontSize: 18, color: black)),
                       ],
                     ),
                   ),
