@@ -11,6 +11,7 @@ class PhoneAuth extends StatefulWidget {
 
 class _PhoneAuthState extends State<PhoneAuth> {
   TextEditingController _phoneAuth = TextEditingController(text: "+237");
+  TextEditingController _phoneAuth2 = TextEditingController(text: "");
 
   @override
   Widget build(BuildContext context) {
@@ -42,73 +43,85 @@ class _PhoneAuthState extends State<PhoneAuth> {
             )
           ],
         ),
-        body: Stack(
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 60, 0, 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+        body: SingleChildScrollView(
+          physics: NeverScrollableScrollPhysics(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
                 children: [
-                  Column(
-                    children: [
-                      Text('Enter Your Phone Number',
-                          style: TextStyle(fontSize: 20.sp, color: black)),
-                      SizedBox(height: 1.h),
-                      Text('a validation code will be send',
-                          style: TextStyle(fontSize: 18, color: blackDesc)),
-                      Text('to this number',
-                          style: TextStyle(fontSize: 18, color: blackDesc)),
-                      SizedBox(height: 1.h),
-                      Form(
-                          child: Row(
-                        children: [
-                          SizedBox(
-                            width: 19.w,
-                            child: TextFormField(
-                              style: TextStyle(color: Colors.grey),
-                              readOnly: true,
-                              decoration: textInputForm,
-                              controller: _phoneAuth,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 60, 0, 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Column(
+                              children: [
+                                Text('Enter Your Phone Number',
+                                    style: TextStyle(
+                                        fontSize: 20.sp, color: black)),
+                                SizedBox(height: 1.h),
+                                Text('a validation code will be send',
+                                    style: TextStyle(
+                                        fontSize: 18, color: blackDesc)),
+                                Text('to this number',
+                                    style: TextStyle(
+                                        fontSize: 18, color: blackDesc)),
+                                SizedBox(height: 1.h),
+                                Form(
+                                    child: Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 19.w,
+                                      child: TextFormField(
+                                        style: TextStyle(color: Colors.grey),
+                                        readOnly: true,
+                                        decoration: textInputForm,
+                                        controller: _phoneAuth,
+                                        keyboardType: TextInputType.number,
+                                      ),
+                                    ),
+                                    SizedBox(width: 3.w),
+                                    InputTextFeilds(
+                                        hintText: "",
+                                        borderColor: green,
+                                        textcontoller: _phoneAuth2)
+                                  ],
+                                )),
+                                SizedBox(height: 6.h),
+                                PrimaryButton(
+                                    text: "Next",
+                                    color: green,
+                                    onPressed: () {
+                                      Navigator.pushNamed(
+                                          context, '/validation');
+                                    })
+                              ],
                             ),
-                          ),
-                          SizedBox(width: 3.w),
-                          SizedBox(
-                            width: 160,
-                            child: TextFormField(decoration: textInputForm),
-                          )
-                        ],
-                      )),
-                      SizedBox(height: 6.h),
-                      SizedBox(
-                        height: 6.h,
-                        width: 50.w,
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/validation');
-                          },
-                          child: Text("Next",
-                              style: TextStyle(color: Colors.white)),
-                          style: TextButton.styleFrom(
-                              backgroundColor:
-                                  Color.fromARGB(255, 60, 173, 193)),
+                          ],
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
+                  SizedBox(height: 23.h)
                 ],
               ),
-            ),
-            Positioned(
-              top: 60.2.h,
-              width: widthMedia,
-              // height: 200,
-              child: Image(
-                image: AssetImage("assets/curve.png"),
-                fit: BoxFit.cover,
-              ),
-            )
-          ],
+              Column(
+                children: [
+                  SizedBox(
+                    // width: 300,
+                    // height: 200,
+                    child: Image(
+                      image: AssetImage("assets/curve.png"),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ));
   }
 }

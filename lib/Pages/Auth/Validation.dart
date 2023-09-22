@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:swiftcoin/Shared/consant.dart';
 import 'package:swiftcoin/Shared/include.dart';
 
 class Validation extends StatefulWidget {
@@ -40,187 +41,213 @@ class _ValidationState extends State<Validation> {
             )
           ],
         ),
-        body: Stack(
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 60, 0, 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      Text('Enter the validation code',
-                          style: TextStyle(fontSize: 18, color: black)),
-                      Text('number',
-                          style: TextStyle(fontSize: 18, color: black)),
-                      Text('(The validation will be send to your phone number)',
-                          style: TextStyle(fontSize: 16, color: black)),
-                      SizedBox(height: 25),
-                      Form(
-                          child: Row(
+        body: SingleChildScrollView(
+          // physics: FixedExtentScrollPhysics(),
+          child: Container(
+            child: Column(
+              // crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 60, 0, 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          // Third Box ...........................
-                          SizedBox(
-                            height: 68,
-                            width: 64,
-                            child: TextFormField(
-                              onChanged: (value) {
-                                if (value.length == 1) {
-                                  FocusScope.of(context).nextFocus();
-                                }
-                              },
-                              style: Theme.of(context).textTheme.headlineLarge,
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                  fillColor: Color.fromARGB(91, 158, 158, 158),
-                                  filled: true,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(0, 158, 158, 158)),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(0, 158, 158, 158)),
-                                  )),
-                              inputFormatters: [
-                                LengthLimitingTextInputFormatter(1),
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 7),
-// Second Box ...........................
-                          SizedBox(
-                            height: 68,
-                            width: 64,
-                            child: TextFormField(
-                              onChanged: (value) {
-                                if (value.length == 1) {
-                                  FocusScope.of(context).nextFocus();
-                                }
-                              },
-                              style: Theme.of(context).textTheme.headlineLarge,
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                  fillColor: Color.fromARGB(91, 158, 158, 158),
-                                  filled: true,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(0, 158, 158, 158)),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(0, 158, 158, 158)),
-                                  )),
-                              inputFormatters: [
-                                LengthLimitingTextInputFormatter(1),
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 7),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            child: Column(
+                              children: [
+                                Text('Enter the validation code',
+                                    style: TextStyle(
+                                        fontSize: 20.sp, color: black)),
+                                Text('number',
+                                    style: TextStyle(
+                                        fontSize: 20.sp, color: black)),
+                                Text(
+                                    'The validation will be send to your phone number',
+                                    style: TextStyle(
+                                        fontSize: 16.sp, color: black)),
+                                SizedBox(height: 25),
+                                Form(
+                                    child: Row(
+                                  children: [
+                                    // Third Box ...........................
+                                    SizedBox(
+                                      height: 6.h,
+                                      width: 14.w,
+                                      child: TextFormField(
+                                        keyboardType: TextInputType.number,
 
-// Third Box ...........................
-                          SizedBox(
-                            height: 68,
-                            width: 64,
-                            child: TextFormField(
-                              onChanged: (value) {
-                                if (value.length == 1) {
-                                  FocusScope.of(context).nextFocus();
-                                }
-                              },
-                              style: Theme.of(context).textTheme.headlineLarge,
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                  fillColor: Color.fromARGB(91, 158, 158, 158),
-                                  filled: true,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(0, 158, 158, 158)),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(0, 158, 158, 158)),
-                                  )),
-                              inputFormatters: [
-                                LengthLimitingTextInputFormatter(1),
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 7),
+                                        onChanged: (value) {
+                                          if (value.length == 1) {
+                                            FocusScope.of(context).nextFocus();
+                                          }
+                                        },
+                                        // style: Theme.of(context).textTheme.headlineLarge,
+                                        textAlign: TextAlign.center,
+                                        decoration: otptextInput,
+                                        inputFormatters: [
+                                          LengthLimitingTextInputFormatter(1),
+                                          FilteringTextInputFormatter.digitsOnly
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 1.w),
 
-// Fourth Box ...........................
-                          SizedBox(
-                            height: 68,
-                            width: 64,
-                            child: TextFormField(
-                              onChanged: (value) {
-                                if (value.length == 1) {
-                                  FocusScope.of(context).nextFocus();
-                                }
-                              },
-                              style: Theme.of(context).textTheme.headlineLarge,
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                  fillColor: Color.fromARGB(91, 158, 158, 158),
-                                  filled: true,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(0, 158, 158, 158)),
+                                    SizedBox(
+                                      height: 6.h,
+                                      width: 14.w,
+                                      child: TextFormField(
+                                        keyboardType: TextInputType.number,
+
+                                        onChanged: (value) {
+                                          if (value.length == 1) {
+                                            FocusScope.of(context).nextFocus();
+                                          }
+                                        },
+                                        // style: Theme.of(context).textTheme.headlineLarge,
+                                        textAlign: TextAlign.center,
+                                        decoration: otptextInput,
+                                        inputFormatters: [
+                                          LengthLimitingTextInputFormatter(1),
+                                          FilteringTextInputFormatter.digitsOnly
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 1.w),
+
+                                    SizedBox(
+                                      height: 6.h,
+                                      width: 14.w,
+                                      child: TextFormField(
+                                        keyboardType: TextInputType.number,
+
+                                        onChanged: (value) {
+                                          if (value.length == 1) {
+                                            FocusScope.of(context).nextFocus();
+                                          }
+                                        },
+                                        // style: Theme.of(context).textTheme.headlineLarge,
+                                        textAlign: TextAlign.center,
+                                        decoration: otptextInput,
+                                        inputFormatters: [
+                                          LengthLimitingTextInputFormatter(1),
+                                          FilteringTextInputFormatter.digitsOnly
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 1.w),
+
+                                    // Second Box ...........................
+                                    SizedBox(
+                                      height: 6.h,
+                                      width: 14.w,
+                                      child: TextFormField(
+                                        keyboardType: TextInputType.number,
+
+                                        onChanged: (value) {
+                                          if (value.length == 1) {
+                                            FocusScope.of(context).nextFocus();
+                                          }
+                                        },
+                                        // style: Theme.of(context).textTheme.headlineLarge,
+                                        textAlign: TextAlign.center,
+
+                                        decoration: otptextInput,
+                                        inputFormatters: [
+                                          LengthLimitingTextInputFormatter(1),
+                                          FilteringTextInputFormatter.digitsOnly
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 1.w),
+
+                                    // Third Box ...........................
+                                    SizedBox(
+                                      height: 6.h,
+                                      width: 14.w,
+                                      child: TextFormField(
+                                        keyboardType: TextInputType.number,
+
+                                        onChanged: (value) {
+                                          if (value.length == 1) {
+                                            FocusScope.of(context).nextFocus();
+                                          }
+                                        },
+                                        // style: Theme.of(context).textTheme.headlineLarge,
+                                        textAlign: TextAlign.center,
+                                        decoration: otptextInput,
+                                        inputFormatters: [
+                                          LengthLimitingTextInputFormatter(1),
+                                          FilteringTextInputFormatter.digitsOnly
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 1.w),
+
+                                    // Fourth Box ...........................
+                                    SizedBox(
+                                      height: 6.h,
+                                      width: 14.w,
+                                      child: TextFormField(
+                                        keyboardType: TextInputType.number,
+                                        onChanged: (value) {
+                                          if (value.length == 1) {
+                                            FocusScope.of(context).nextFocus();
+                                          }
+                                        },
+                                        // style: Theme.of(context).textTheme.headlineLarge,
+                                        textAlign: TextAlign.center,
+                                        decoration: otptextInput,
+                                        inputFormatters: [
+                                          LengthLimitingTextInputFormatter(1),
+                                          FilteringTextInputFormatter.digitsOnly
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                                SizedBox(height: 5.h),
+                                SizedBox(
+                                  height: 45,
+                                  width: 160,
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, '/codeSet');
+                                    },
+                                    child: Text("Next",
+                                        style: TextStyle(color: Colors.white)),
+                                    style: TextButton.styleFrom(
+                                        backgroundColor:
+                                            Color.fromARGB(255, 60, 173, 193)),
                                   ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color:
-                                            Color.fromARGB(0, 158, 158, 158)),
-                                  )),
-                              inputFormatters: [
-                                LengthLimitingTextInputFormatter(1),
-                                FilteringTextInputFormatter.digitsOnly
+                                ),
                               ],
                             ),
                           ),
                         ],
-                      )),
-                      SizedBox(height: 50),
-                      SizedBox(
-                        height: 45,
-                        width: 160,
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/codeSet');
-                          },
-                          child: Text("Next",
-                              style: TextStyle(color: Colors.white)),
-                          style: TextButton.styleFrom(
-                              backgroundColor:
-                                  Color.fromARGB(255, 60, 173, 193)),
-                        ),
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                    SizedBox(height: 23.h)
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      child: Image(
+                        image: AssetImage("assets/curve.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                )
+              ],
             ),
-            Positioned(
-              top: 400,
-              width: widthMedia,
-              // height: 200,
-              child: Image(
-                image: AssetImage("assets/curve.png"),
-                fit: BoxFit.cover,
-              ),
-            )
-          ],
+          ),
         ));
   }
 }
